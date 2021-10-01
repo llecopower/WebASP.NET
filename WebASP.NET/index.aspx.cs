@@ -101,17 +101,17 @@ namespace WebASP.NET
         {
             panOrder.Visible = true;
 
-            litOrder.Text = "Sir/Miss " + txtCustomer.Text + ", </br> Your order for a " + lstPizzaSize.SelectedItem.Text + "</br>" + cboPizza.SelectedItem.Text + "Pizza </br> with topping of: <ul> ";
+            litOrder.Text = "Sir/Miss " + txtCustomer.Text + ", </br> Your order for a " + lstPizzaSize.SelectedItem.Text + "</br>" +
+                cboPizza.SelectedItem.Text + "Pizza </br> with topping of: <ul> ";
 
             foreach (ListItem item in chklstToppings.Items)
             {
                 litOrder.Text += item.Selected ? "<li>" + item.Text + "</li>" : "";
             }
 
-            litOrder.Text += "</ul> </br> On a " + radlstCrust.SelectedItem.Text + "crust <br/>";
+            litOrder.Text += "</ul> On a " + radlstCrust.SelectedItem.Text + " crust <br/>";
 
-
-
+            litOrder.Text += chkDelivery.Checked ? "will be delivered at " + "</br>" + txtAddress.Text : "The Pizza is to pick up.";
         }
     }
 }
